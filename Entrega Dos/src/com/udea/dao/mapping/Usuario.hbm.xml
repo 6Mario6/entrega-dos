@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 31/05/2015 03:29:30 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.udea.dto.Usuario" table="usuario">
+        <id name="idUsuario" type="int">
+            <column name="idUsuario" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="apellido" type="java.lang.String">
+            <column name="apellido" length="45" not-null="true" />
+        </property>
+        <property name="telefono" type="java.lang.String">
+            <column name="telefono" length="45" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" length="45" not-null="true" />
+        </property>
+        <property name="username" type="java.lang.String">
+            <column name="username" length="45" not-null="true" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" length="128" not-null="true" />
+        </property>
+        <property name="grupoInvestigacion" type="java.lang.String">
+            <column name="grupo_investigacion" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

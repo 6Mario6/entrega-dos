@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 31/05/2015 04:28:38 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.udea.dto.SolicitudPrestamo" table="solicitud_prestamo">
+        <id name="idReservacion" type="int">
+            <column name="idReservacion" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="administrador" class="com.udea.dto.Administrador" fetch="join">
+            <column name="idAdministrador" not-null="true" />
+        </many-to-one>
+        <many-to-one name="dispositivo" class="com.udea.dto.Dispositivo" fetch="join">
+            <column name="idDispositivo" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="com.udea.dto.Usuario" fetch="join">
+            <column name="idUsuarioPrestamo" not-null="true" />
+        </many-to-one>
+        <property name="fechaSolicitudInicio" type="java.util.Date">
+            <column name="fecha_solicitud_inicio" length="10" not-null="true" />
+        </property>
+        <property name="horaSolicitudInicio" type="java.sql.Time">
+            <column name="hora_solicitud_inicio" length="8" not-null="true" />
+        </property>
+        <property name="estadoSolicitud" type="int">
+            <column name="estado_solicitud" not-null="true" />
+        </property>
+     
+    </class>
+</hibernate-mapping>

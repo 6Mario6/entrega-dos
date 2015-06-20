@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 31/05/2015 03:29:30 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.udea.dto.Prestamo" table="prestamo">
+        <id name="idPrestamo" type="int">
+            <column name="idPrestamo" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="solicitudPrestamo" class="com.udea.dto.SolicitudPrestamo" fetch="join">
+            <column name="idReservacion" not-null="true" />
+        </many-to-one>
+        <property name="fechaPrestamo" type="java.util.Date">
+            <column name="fecha_prestamo" length="10" not-null="true" />
+        </property>
+        <property name="horaPrestamo" type="java.sql.Time">
+            <column name="hora_prestamo" length="8" not-null="true" />
+        </property>
+        <property name="fechaFinPrestamo" type="java.util.Date">
+            <column name="fecha_fin_prestamo" length="10" />
+        </property>
+        <property name="horaFinPrestamo" type="java.sql.Time">
+            <column name="hora_fin_prestamo" length="8" />
+        </property>
+    </class>
+</hibernate-mapping>

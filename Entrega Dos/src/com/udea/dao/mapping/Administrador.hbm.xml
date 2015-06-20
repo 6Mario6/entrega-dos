@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 31/05/2015 03:29:30 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.udea.dto.Administrador" table="administrador">
+		<id name="idAdministrador" type="int">
+			<column name="idAdministrador" />
+			<generator class="foreign">
+				<param name="property">usuario</param>
+			</generator>
+		</id>
+		<one-to-one name="usuario" class="com.udea.dto.Usuario" cascade="all"/>
+	</class>
+</hibernate-mapping>

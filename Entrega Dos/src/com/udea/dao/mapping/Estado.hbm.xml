@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 31/05/2015 03:29:30 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.udea.dto.Estado" table="estado">
+        <id name="idEstado" type="int">
+            <column name="idEstado" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="descripcion" type="java.lang.String">
+            <column name="descripcion" length="200" not-null="true" />
+        </property>
+        <set name="dispositivos" table="dispositivo" inverse="false" lazy="true">
+            <key>
+                <column name="idEstado" not-null="true" />
+            </key>
+            <one-to-many class="com.udea.dto.Dispositivo" />
+        </set>
+    </class>
+</hibernate-mapping>
