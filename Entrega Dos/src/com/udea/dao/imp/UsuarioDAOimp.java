@@ -65,6 +65,26 @@ public class UsuarioDAOimp extends HibernateDaoSupport implements UsuarioDAO {
 		}
 		return usuario;
 	}
+	/**Con este metodo se buscara al usuario identificado con un username
+	 * @param username parametro que se recibe para identificar al usuario en la base de datos
+	 * @return usuario retorna El usuario buscado
+ 	 * @throws MyException	Esta es una excepción propia en caso de inconvenientes
+ 	 *
+	 */
+	@Override
+	public Usuario obtenerUsuario(String username) throws MyException {
+		Usuario usuario = null;
+		Session session = null;
+		try {
+			session = getSession();
+			Criteria criteria = session.createCriteria(Usuario.class).add(
+					Restrictions.eq("username", username));
+			usuario = (Usuario) criteria.uniqueResult();
+		} catch (HibernateException e) {
+			throw new MyException(e);
+		}
+		return usuario;
+	}
 	/**Este metodo guarda al usuario  dentro de las bases de datos
 	 * @param usuario el usuario que se desea guardar enla base de datos
 	 * @throws MyException Esta es una excepción propia en caso de inconvenientes

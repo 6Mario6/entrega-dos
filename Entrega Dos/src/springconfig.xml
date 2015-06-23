@@ -69,4 +69,5 @@
 	<bean id="UsuarioInterLogn" class="com.udea.logica.UsuarioLognImp">
 		<property name="usDao" ref="UsuarioDAO"></property>
 	</bean>
+	<context:component-scan base-package="com.udea.ws"></context:component-scan>
 </beans>
