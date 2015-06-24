@@ -66,7 +66,7 @@
 	<bean id="UsuarioDAO" class="com.udea.dao.imp.UsuarioDAOimp">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-	<bean id="UsuarioInterLogn" class="com.udea.logica.UsuarioLognImp">
+	<bean id="UsuarioInterLogn" class="com.udea.logica.imp.UsuarioLognImp">
 		<property name="usDao" ref="UsuarioDAO"></property>
 	</bean>
 	<context:component-scan base-package="com.udea.ws"></context:component-scan>

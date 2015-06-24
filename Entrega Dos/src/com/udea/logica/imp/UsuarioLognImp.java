@@ -1,17 +1,17 @@
-package com.udea.logica;
+package com.udea.logica.imp;
 
 import java.util.List;
 
 import com.udea.dao.UsuarioDAO;
 import com.udea.dto.Usuario;
 import com.udea.exception.MyException;
+import com.udea.logica.UsuarioLogn;
 
 public class UsuarioLognImp implements UsuarioLogn {
 	private UsuarioDAO usDao;
 
 	@Override
 	public List<Usuario> obtener() throws MyException {
-		// TODO Auto-generated method stub
 		return getUsDao().obtener();
 	}
 
@@ -140,8 +140,8 @@ public class UsuarioLognImp implements UsuarioLogn {
 		if(usuario==null){
 			throw new MyException("El usuario no valido.");
 		}
-		if(usuario.getPassword()!=password){
-			throw new MyException("El password no valido.");
+		if(!usuario.getPassword().equals(password)){
+			throw new MyException("El password no valido" +"-"+usuario.getPassword()+"=="+password);
 		}
 		return true;
 	}
