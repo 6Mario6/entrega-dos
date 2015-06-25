@@ -21,15 +21,15 @@ public class SolicitudPrestamo implements Serializable {
 	/**
 	 * el adminsitrador asociado a la solicitud
 	 */
-	private Administrador administrador;
+	private int idAdministrador;
 	/**
 	 * el dispositivo asociado a la solicitud
 	 */
-	private Dispositivo dispositivo;
+	private int idDispositivo;
 	/**
 	 * el usuario asociado a la solicitud
 	 */
-	private Usuario usuario;
+	private int idUsuario;
 	/**
 	 * la fecha de solicitud inicio
 	 */
@@ -41,7 +41,7 @@ public class SolicitudPrestamo implements Serializable {
 	/**
 	 * establece el estado de la solicitud
 	 */
-	private int estadoSolicitud;
+	private String estadoSolicitud;
 /**
  * retorna la id de la reservacion
  * @return entero con la id de la reservacion
@@ -88,57 +88,57 @@ public class SolicitudPrestamo implements Serializable {
  * retorna el estado de la solicitud
  * @return entero con el estado
  */
-	public int getEstadoSolicitud() {
+	public String getEstadoSolicitud() {
 		return estadoSolicitud;
 	}
 /**
  * establece el estado de la solicitud
  * @param estadoSolicitud el nuevo estado de la solicitud
  */
-	public void setEstadoSolicitud(int estadoSolicitud) {
+	public void setEstadoSolicitud(String estadoSolicitud) {
 		this.estadoSolicitud = estadoSolicitud;
 	}
 /**
  * retorna el administrado asociado
  * @return elemento de la clase administrador
  */
-	public Administrador getAdministrador() {
-		return administrador;
+	public int getAdministrador() {
+		return idAdministrador;
 	}
 /**
  * establece el nuevo administrador asociado a la solicitud
  * @param administrador el nuevo administrador
  */
-	public void setAdministrador(Administrador administrador) {
-		this.administrador = administrador;
+	public void setAdministrador(int idAdministrador) {
+		this.idAdministrador = idAdministrador;
 	}
 /**
  * retorna el usuario asociado a la solicitud
  * @return retorna un usuario
  */
-	public Usuario getUsuario() {
-		return usuario;
+	public int getUsuario() {
+		return idUsuario;
 	}
 /**
  * establece el nuevo usuario asociado a la solicitud
  * @param usuario el nuevo usuario
  */
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 /**
  * retorna la id del dispositivo
  * @return elemento de tipo dispositivo
  */
-	public Dispositivo getDispositivo() {
-		return dispositivo;
+	public int getDispositivo() {
+		return idDispositivo;
 	}
 /**
  * establece el nuevo dispositivo asociado
  * @param dispositivo el nuevo dispositivo
  */
-	public void setDispositivo(Dispositivo dispositivo) {
-		this.dispositivo = dispositivo;
+	public void setDispositivo(int idDispositivo) {
+		this.idDispositivo = idDispositivo;
 	}
 
 }

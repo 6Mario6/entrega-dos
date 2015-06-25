@@ -15,7 +15,7 @@ Clase encargada de los setter y getter del elemento Dispositivo
 public class Dispositivo implements Serializable {
 	
 	
-	private InventarioDispositivo invDispositivo;
+	//private InventarioDispositivo invDispositivo;
 	/**
 	 * Entero que define la id del dispositivo
 	 */
@@ -23,15 +23,15 @@ public class Dispositivo implements Serializable {
 	/**
 	 * atributo de la clase administrador a crear
 	 */
-	private Administrador administrador;
+	private int idAdministrador;
 	/**
 	 * atributo de la clase categoria a crear
 	 */
-	private Categoria categoria;
+	private int idCategoria;
 	/**
 	 * atributo de la clase estado
 	 */
-	private Estado estado;
+	private int idEstado;
 	/**
 	 * String nombre del dispositivo
 	 * 
@@ -107,48 +107,49 @@ public class Dispositivo implements Serializable {
  * retorna el administrador del dispositivo
  * @return elemento de la clase administrador
  */
-	public Administrador getAdministrador() {
-		return administrador;
+	public int getAdministrador() {
+		return idAdministrador;
 	}
 /**
  * establce el administrador del dispositivo
  * @param administrador el nuevo administrador del dispositivo
  */
-	public void setAdministrador(Administrador administrador) {
-		this.administrador = administrador;
+	public void setAdministrador(int idAdministrador) {
+		this.idAdministrador = idAdministrador;
 	}
 /**
  * retorna la categoria del dispositivo
  * @return elemento de la clase categoria
  */
-	public Categoria getCategoria() {
-		return categoria;
+	public int getCategoria() {
+		return idCategoria;
 	}
 /**
  * establece la categoria del dispositivo 
  * @param categoria la nueva categoria del dispositivo
  */
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
+	public void setCategoria(int idCategoria) {
+		this.idCategoria = idCategoria;
 	}
 /**
  * retorna el estado del dispositivo
  * @return elemento de la clase estado
  */
-	public Estado getEstado() {
-		return estado;
+	public int getEstado() {
+		return idEstado;
 	}
 /**
  * establece el nuevo estado del dispositivo
  * @param estado el nuevo estado del dispositivo
  */
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+	public void setEstado(int idEstado) {
+		this.idEstado = idEstado;
 	}
+	/*
 public InventarioDispositivo getInvDispositivo() {
 	return invDispositivo;
 }
 public void setInvDispositivo(InventarioDispositivo invDispositivo) {
 	this.invDispositivo = invDispositivo;
-}
+}*/
 }

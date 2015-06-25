@@ -69,5 +69,11 @@
 	<bean id="UsuarioInterLogn" class="com.udea.logica.imp.UsuarioLognImp">
 		<property name="usDao" ref="UsuarioDAO"></property>
 	</bean>
+	<bean id="DispositivoLogi" class="com.udea.logica.imp.DispositivoLogImp">
+		<property name="disDao" ref="DispositivoDAO"></property>
+		<property name="adDao" ref="AdministradorDAO"></property>
+		<property name="catDao" ref="CategoriaDAO"></property>
+		<property name="estDao" ref="EstadoDAO"></property>
+	</bean>
 	<context:component-scan base-package="com.udea.ws"></context:component-scan>
 </beans>

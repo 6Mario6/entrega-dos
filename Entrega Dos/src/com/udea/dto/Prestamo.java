@@ -21,7 +21,7 @@ public class Prestamo implements Serializable {
 	/**
 	 * la solicitud del prestamo
 	 */
-	private SolicitudPrestamo solicitudPrestamo;
+	private int idReservacion;
 	/**
 	 * fecha en la cual se hizo el prestamo
 	 */
@@ -113,15 +113,15 @@ public class Prestamo implements Serializable {
  * retorna  la solicitud de prestamo
  * @return retorna una solicitud de prestamo
  */
-	public SolicitudPrestamo getSolicitudPrestamo() {
-		return solicitudPrestamo;
+	public int getSolicitudPrestamo() {
+		return 	idReservacion;
 	}
 /**
  * establce la solicitud de prestamo
  * @param solicitudPrestamo la nueva solicitud de prestamo
  */
-	public void setSolicitudPrestamo(SolicitudPrestamo solicitudPrestamo) {
-		this.solicitudPrestamo = solicitudPrestamo;
+	public void setSolicitudPrestamo(int 	idReservacion) {
+		this.	idReservacion = 	idReservacion;
 	}
 
 }

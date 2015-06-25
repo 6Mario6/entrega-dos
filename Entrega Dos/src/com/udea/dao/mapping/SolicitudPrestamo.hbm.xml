@@ -8,22 +8,22 @@
             <column name="idReservacion" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="administrador" class="com.udea.dto.Administrador" fetch="join">
-            <column name="idAdministrador" not-null="true" />
-        </many-to-one>
-        <many-to-one name="dispositivo" class="com.udea.dto.Dispositivo" fetch="join">
-            <column name="idDispositivo" not-null="true" />
-        </many-to-one>
-        <many-to-one name="usuario" class="com.udea.dto.Usuario" fetch="join">
-            <column name="idUsuarioPrestamo" not-null="true" />
-        </many-to-one>
+         <property name="administrador" type="int">
+            <column name="idAdministrador"  not-null="true" />
+        </property>
+        <property name="dispositivo" type="int">
+            <column name="idDispositivo"  not-null="true" />
+        </property>
+        <property name="usuario" type="int">
+            <column name="idUsuarioPrestamo"  not-null="true" />
+        </property>
         <property name="fechaSolicitudInicio" type="java.util.Date">
             <column name="fecha_solicitud_inicio" length="10" not-null="true" />
         </property>
         <property name="horaSolicitudInicio" type="java.sql.Time">
             <column name="hora_solicitud_inicio" length="8" not-null="true" />
         </property>
-        <property name="estadoSolicitud" type="int">
+        <property name="estadoSolicitud" type="java.lang.String">
             <column name="estado_solicitud" not-null="true" />
         </property>
      

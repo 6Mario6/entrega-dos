@@ -8,15 +8,15 @@
             <column name="idDispositivo" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="administrador" class="com.udea.dto.Administrador" fetch="join">
+        <property name="administrador" type="int" >
             <column name="idAdministrador" not-null="true" />
-        </many-to-one>
-        <many-to-one name="categoria" class="com.udea.dto.Categoria" fetch="join">
+        </property>
+        <property name="categoria" type="int" >
             <column name="idCategoria" not-null="true" />
-        </many-to-one>
-        <many-to-one name="estado" class="com.udea.dto.Estado" fetch="join">
+        </property>
+      	<property name="estado" type="int" >
             <column name="idEstado" not-null="true" />
-        </many-to-one>
+        </property>
         <property name="nombre" type="java.lang.String">
             <column name="nombre" length="45" not-null="true" />
         </property>

@@ -8,9 +8,9 @@
             <column name="idPrestamo" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="solicitudPrestamo" class="com.udea.dto.SolicitudPrestamo" fetch="join">
+        <property name="solicitudPrestamo" type="int">
             <column name="idReservacion" not-null="true" />
-        </many-to-one>
+        </property>
         <property name="fechaPrestamo" type="java.util.Date">
             <column name="fecha_prestamo" length="10" not-null="true" />
         </property>
