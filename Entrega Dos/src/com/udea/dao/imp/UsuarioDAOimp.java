@@ -16,7 +16,7 @@ import com.udea.exception.MyException;
 *Clase encargada de implementar la logica de la interfaz del mismo nombre
  * 
  * @author andersson villa
- * @author Mario Fernandez
+ * @author Jorge Mario Fernandez
  * @author David Montoya
  * @version 1.0
  * @since 01-06-15
@@ -41,6 +41,7 @@ public class UsuarioDAOimp extends HibernateDaoSupport implements UsuarioDAO {
 			Criteria criteria = session.createCriteria(Usuario.class);
 			usuarios = criteria.list();
 		} catch (HibernateException e) {
+			log.error("ocurrió un error al obtener la lista de usuarios", e);
 			throw new MyException(e);
 		}
 		return usuarios;
@@ -61,6 +62,7 @@ public class UsuarioDAOimp extends HibernateDaoSupport implements UsuarioDAO {
 					Restrictions.eq("idUsuario", idUsuario));
 			usuario = (Usuario) criteria.uniqueResult();
 		} catch (HibernateException e) {
+			log.error("ocurrió un error al obtener el usuario", e);
 			throw new MyException(e);
 		}
 		return usuario;
@@ -81,6 +83,7 @@ public class UsuarioDAOimp extends HibernateDaoSupport implements UsuarioDAO {
 					Restrictions.eq("username", username));
 			usuario = (Usuario) criteria.uniqueResult();
 		} catch (HibernateException e) {
+			log.error("ocurrió un error al obtener el usuario", e);
 			throw new MyException(e);
 		}
 		return usuario;

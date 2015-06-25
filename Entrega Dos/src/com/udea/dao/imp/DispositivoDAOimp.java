@@ -14,7 +14,7 @@ import com.udea.exception.MyException;
 Implementacion de la interfaz del mismo nombre
  * 
  * @author andersson villa
- * @author Mario Fernandez
+ * @author Jorge Mario Fernandez
  * @author David Montoya
  * @version 1.0
  * @since 01-06-15

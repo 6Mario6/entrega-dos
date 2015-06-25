@@ -59,7 +59,6 @@ public class Usuario implements Serializable {
 	 * establece la id del usuario
 	 * @param idUsuario la nueva id del usuario
 	 */
-
 	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}

@@ -14,7 +14,7 @@ import com.udea.exception.MyException;
 *Clase encargada de aplicar la logica a la interfaz del mismo nombre
  * 
  * @author andersson villa
- * @author Mario Fernandez
+ * @author Jorge Mario Fernandez
  * @author David Montoya
  * @version 1.0
  * @since 01-06-15
@@ -39,6 +39,7 @@ public class SolicitudPrestamoDAOimp extends HibernateDaoSupport implements
 			Criteria criteria = session.createCriteria(SolicitudPrestamo.class);
 			solicitudes = criteria.list();
 		} catch (HibernateException e) {
+			log.error("Error SolicitudPrestamoDAO: ", e);
 			throw new MyException(e);
 		}
 		return solicitudes;

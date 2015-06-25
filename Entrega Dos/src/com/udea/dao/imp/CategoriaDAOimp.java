@@ -15,7 +15,7 @@ import com.udea.exception.MyException;
  * ademas de ejecutar los metodos
  * 
  * @author andersson villa
- * @author Mario Fernandez
+ * @author Jorge Mario Fernandez
  * @author David Montoya
  * @version 1.0
  * @since 01-06-15

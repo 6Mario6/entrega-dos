@@ -6,21 +6,29 @@ import com.udea.dao.UsuarioDAO;
 import com.udea.dto.Usuario;
 import com.udea.encode.Cifrar;
 import com.udea.exception.MyException;
-import com.udea.logica.UsuarioLogn;
+import com.udea.logica.UsuarioLogica;
 
-public class UsuarioLognImp implements UsuarioLogn {
+public class UsuarioLognImp implements UsuarioLogica {
 	private UsuarioDAO usDao;
 
 	@Override
 	public List<Usuario> obtener() throws MyException {
 		return getUsDao().obtener();
 	}
-
+	@Override
+	public Usuario obtenerUsuario(Integer idUsuario) throws MyException {
+		Usuario usuario= usDao.obtenerUsuario(idUsuario);
+		if ( usuario== null) {
+			throw new MyException("El usuario no existe en el sistema.");
+		}
+		return usuario;
+	}
 	@Override
 	public void guardarUsuario(int idUsuario, String nombre, String apellido,
 			String telefono, String email, String username, String password,
 			String grupoInvestigacion) throws MyException {
 		Usuario usuario = null;
+		Cifrar cifrar = new Cifrar ();
 		if (usDao.obtenerUsuario(idUsuario) != null) {
 			throw new MyException("El usuario ya existe en el sistema.");
 		}
@@ -59,7 +67,7 @@ public class UsuarioLognImp implements UsuarioLogn {
 		usuario.setTelefono(telefono);
 		usuario.setEmail(email);
 		usuario.setUsername(username);
-		usuario.setPassword(password);
+		usuario.setPassword(cifrar.encrypt(password));
 		usuario.setGrupoInvestigacion(grupoInvestigacion);
 		usDao.guardar(usuario);
 
@@ -156,6 +164,8 @@ public class UsuarioLognImp implements UsuarioLogn {
 	public void setUsDao(UsuarioDAO usDao) {
 		this.usDao = usDao;
 	}
+
+	
 
 	
 }
