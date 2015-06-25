@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.udea.dao.UsuarioDAO;
 import com.udea.dao.imp.UsuarioDAOimp;
 import com.udea.dto.Usuario;
+import com.udea.encode.Cifrar;
 import com.udea.exception.MyException;
 
 
@@ -38,7 +39,6 @@ public class UsuarioDAOimpTest {
      
 		PropertyConfigurator.configure("log4j.properties");
 		
-
 		try {
 			
 			usuarios = usuariodao.obtener();
@@ -48,6 +48,7 @@ public class UsuarioDAOimpTest {
 						+ user.getNombre());
 
 			}
+
 			assertTrue(true);
 
 		} catch (MyException e) {
