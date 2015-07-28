@@ -5,15 +5,10 @@ import java.util.Date;
 import java.util.List;
 
 import com.udea.dao.AdministradorDAO;
-import com.udea.dao.CategoriaDAO;
 import com.udea.dao.DispositivoDAO;
-import com.udea.dao.EstadoDAO;
 import com.udea.dao.SolicitudPrestamoDAO;
 import com.udea.dao.UsuarioDAO;
-import com.udea.dto.Dispositivo;
 import com.udea.dto.SolicitudPrestamo;
-import com.udea.dto.Usuario;
-import com.udea.encode.Cifrar;
 import com.udea.exception.MyException;
 import com.udea.logica.SolicitudPrestamoLogica;
 
@@ -27,6 +22,7 @@ import com.udea.logica.SolicitudPrestamoLogica;
  *
  */
 public class SolicitudPrestamoLogImp implements SolicitudPrestamoLogica {
+	
 	private SolicitudPrestamoDAO solicitudDao;
 	private DispositivoDAO disDao;
 	private AdministradorDAO adDao;
@@ -107,6 +103,24 @@ public class SolicitudPrestamoLogImp implements SolicitudPrestamoLogica {
 
 	public void setSolicitudDao(SolicitudPrestamoDAO solicitudDao) {
 		this.solicitudDao = solicitudDao;
+	}
+	public DispositivoDAO getDisDao() {
+		return disDao;
+	}
+	public void setDisDao(DispositivoDAO disDao) {
+		this.disDao = disDao;
+	}
+	public AdministradorDAO getAdDao() {
+		return adDao;
+	}
+	public void setAdDao(AdministradorDAO adDao) {
+		this.adDao = adDao;
+	}
+	public UsuarioDAO getUsDao() {
+		return usDao;
+	}
+	public void setUsDao(UsuarioDAO usDao) {
+		this.usDao = usDao;
 	}
 	
 }

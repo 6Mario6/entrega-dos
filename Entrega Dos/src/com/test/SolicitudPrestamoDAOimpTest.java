@@ -42,8 +42,8 @@ public class SolicitudPrestamoDAOimpTest {
 		solicitud.setFechaSolicitudInicio(date);
 	    Time jsqlT = new Time(0);
 		solicitud.setHoraSolicitudInicio(jsqlT);
-		solicitud.setIdReservacion(2);
-		solicitud.setUsuario(48);
+		solicitud.setIdReservacion(3);
+		solicitud.setUsuario(1);
 			
 		try{
 			
