@@ -1,5 +1,7 @@
 package com.udea.logica;
 
+import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 
 import com.udea.dto.SolicitudPrestamo;
@@ -17,10 +19,9 @@ public interface SolicitudPrestamoLogica {
 	 * @return solicitud retorna la solicitud buscada
 	 * @throws MyException	Esta es una excepción propia en caso de inconvenientes
 	 */
-	public SolicitudPrestamoLogImp obtenerSolicitudPrestamoLogica(Integer idReservacion) throws MyException;
+	public SolicitudPrestamo obtenerSolicitudPrestamoLogica(Integer idReservacion) throws MyException;
 	
-	public void realizarSolicitud(int idReservacion, String nombre, String apellido,
-			String telefono, String email, String username, String password,
-			String grupoInvestigacion) throws MyException;
+	public void realizarSolicitud(int idReservacion, int idDispositivo, int idAdministrador,
+			int idUsuario, Date fechaSolicitudInicio, Time horaSolicitudInicio, String estadoSolicitud) throws MyException;
 	
 }
